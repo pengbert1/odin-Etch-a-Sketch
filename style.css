@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.row{
+    display: flex;
+    
+}
+
+.grid-square{
+    background-color: black;
+    border: 1px solid white;
+    height: calc((100vh / 16) - 2px);
+    width: calc((100vw / 16) - 2px);
+    box-sizing: border-box;
+
+
+}
+
+
