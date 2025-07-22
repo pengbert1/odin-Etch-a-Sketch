@@ -7,10 +7,16 @@ const divContainer = document.querySelector(".container");
 const gridSizeInput = document.getElementById('grid-size');
 const submitBtn = document.getElementById('size-btn');
 submitBtn.addEventListener('click', () => {
-    deleteSquares();
+    
     const size = gridSizeInput.value;
-    populateGrid(size);
-    activateSquares();
+
+    if(size <= 100){
+        deleteSquares();
+        populateGrid(size);
+        activateSquares();
+    }else{
+        alert("Size must be no greater than 100");
+    }
 
 });
 

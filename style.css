@@ -17,7 +17,7 @@
 }
 .grid-square{
     background-color: black;
-    border: 1px solid white;
+    border: 1px solid rgb(5, 5, 5);
     box-sizing: border-box;
 
 
@@ -27,7 +27,8 @@
 .size-selector{
     width: 100vw;
     height: 100px;
-    background-color: blueviolet;
+    background-color: rgb(112, 109, 115);
+    text-align: center;
 
 }
 
