@@ -41,18 +41,18 @@ function changeColor(squareDiv){
 
 
 function populateGrid(size){
+    const rect = divContainer.getBoundingClientRect();
     for(let i = 0; i < size; i++){
         
         const row = document.createElement("div");
         row.classList.add("row");
-        for(let i = 0; i < size; i++){
+        for(let j = 0; j < size; j++){
             
             let div = document.createElement("div");
             div.classList.add("grid-square");
-            div.style.height = (((window.innerHeight - 100) / size) - 2) + "px";
-            div.style.width = ((window.innerWidth / size) - 2) + "px";
+            div.style.height = (Math.floor(((rect.height - 10) / size))) + "px";
+            div.style.width = (Math.floor(((rect.width - 10) / size))) + "px";
             
-            divContainer.appendChild(div);
             row.appendChild(div);
 
         }
