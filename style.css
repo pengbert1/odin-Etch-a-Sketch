@@ -12,14 +12,22 @@
     
 }
 
+#label{
+    color: white;
+}
 .grid-square{
     background-color: black;
     border: 1px solid white;
-    height: calc((100vh / 16) - 2px);
-    width: calc((100vw / 16) - 2px);
     box-sizing: border-box;
 
 
 }
 
+
+.size-selector{
+    width: 100vw;
+    height: 100px;
+    background-color: blueviolet;
+
+}
 

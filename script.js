@@ -3,21 +3,18 @@ const divContainer = document.querySelector(".container");
 
 
 
-for(let i = 0; i < 16; i++){
-    
-    const row = document.createElement("div");
-    row.classList.add("row");
-    for(let i = 0; i < 16; i++){
-        
-        let div = document.createElement("div");
-        div.classList.add("grid-square");
-        
-        divContainer.appendChild(div);
-        row.appendChild(div);
 
-    }
-    divContainer.appendChild(row);
-}
+const gridSizeInput = document.getElementById('grid-size');
+const submitBtn = document.getElementById('size-btn');
+submitBtn.addEventListener('click', () => {
+    deleteSquares();
+    const size = gridSizeInput.value;
+    populateGrid(size);
+    activateSquares();
+
+});
+
+function activateSquares(){
 
 const squares = document.getElementsByClassName("grid-square")
 
@@ -28,8 +25,44 @@ Array.from(squares).forEach (square => {
 
 });
 
-
+}
 
 function changeColor(squareDiv){
     squareDiv.style.backgroundColor = "blue";
+}
+
+
+
+
+function populateGrid(size){
+    for(let i = 0; i < size; i++){
+        
+        const row = document.createElement("div");
+        row.classList.add("row");
+        for(let i = 0; i < size; i++){
+            
+            let div = document.createElement("div");
+            div.classList.add("grid-square");
+            div.style.height = (((window.innerHeight - 100) / size) - 2) + "px";
+            div.style.width = ((window.innerWidth / size) - 2) + "px";
+            
+            divContainer.appendChild(div);
+            row.appendChild(div);
+
+        }
+        divContainer.appendChild(row);
+    }
+}
+
+
+function deleteSquares(){
+    const rows = document.getElementsByClassName("row")
+
+    Array.from(rows).forEach (row => {
+    
+        row.remove();
+    
+    
+    });
+
 }
